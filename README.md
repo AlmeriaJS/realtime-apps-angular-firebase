@@ -1,7 +1,7 @@
 # Real-time apps con Angular y Firebase
 Presentación para AlmeríaJS acerca de las real-time apps co Angular y Firebase
 
-Tienes disponibles las transparencias en **/slides/** y la demo en **/live-demo**
+Tienes disponibles las transparencias en **/slides** y la demo en **/live-demo**
 
 ---
 

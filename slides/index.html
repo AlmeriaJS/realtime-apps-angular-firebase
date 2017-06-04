@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Real-time apps con AngularJS y Firebase</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section data-background="./img/almeriajsgrande.png">
+        </section>
+        <section>
+          <img src="./img/almeriajs.jpg"  height="200">					
+          <h4>@AlmeriaJS</h4>
+          <h4>https://www.meetup.com/almeriajs/</h4>
+          <h4>https://github.com/almeriaJS/</h4>
+        </section>
+        <section>
+          <h3>Agradecimientos</h3>
+          <div class="row">
+            <img src="./img/angularalmeria.jpg"  height="200">					
+            <img src="./img/laoficina.jpg"  height="200">					
+            <img src="./img/hacklab.png"  style="background-color: white" height="200">
+          </div>
+          <div class="row">
+            <img src="./img/madridjs.png"  height="100">					
+            <img src="./img/pinchito.jpg"  height="100">					
+          </div>
+				</section>
+				<section>
+					<h1>Real-time apps</h1>
+					<h3>con Angular y Firebase</h3>
+					<img src="./img/angular.png"  height="200">
+					<img src="./img/firebase.png"  height="200">
+				</section>
+				<section>
+					
+					<div>
+						<img src="./img/rafa.jpg" alt="Rafa" height = "200">
+						<p>Rafa Prats</p>
+						<p><a href="http://twitter.com/raprav">@raprav</a></p>
+            <p><a href="http://thecoding.ninja">http://thecoding.ninja</a></p>
+						<p>Back-end developer en <a href="http://coderty.com/">Coderty</a></p>
+					</div>
+				</section>
+
+        <section>
+          <img src="./img/momsspaghetti.gif" alt="mom's spaghetti'">
+        </section>
+
+				<section>
+					<section>
+						<h3>Nacimiento de <strong>AlmeríaJS</strong></h3>
+						<img src="./img/everywhere.jpg">	
+					</section>
+					
+					<section>
+						<img src="./img/githubrank.jpg">
+					</section>
+
+          <section>
+						<img src="./img/jsgithub.png">
+					</section>
+
+          <section>
+            <h3>Contador de paquetes en package managers</h3>
+						<img src="./img/modules-counts.png">
+					</section>
+
+					<section>
+						<p>No hay que irse a las <i>bleeding-edge technologies</i></p>
+						<p>JS es culturilla general</p>
+						<p><img src="./img/w3techjs.png"></p>
+					</section>
+
+					<section>
+						<h2>Las tecnologías web están cambiando</h2>
+						<p class="fragment">Single Page Applications</p>
+						<p class="fragment">Progressive Web Apps</p>
+						<p class="fragment">Ionic Framework / Nativescript</p>
+						<p class="fragment">Electron / NW.js</p>
+						<p class="fragment">Esas pequeñas chapuzas con jQuery</p>
+					</section>
+
+					<section>
+						<img src="./img/iknowjs.jpg">
+					</section>
+
+					<section>
+						<h2>Juguemos a un juego</h2>
+						<ol>
+							<li>Dí la primera palabra que te venga a la cabeza</li>
+							<li>append('JS')</li>
+							<li>Busca en Google</li>
+							<li>Si no es un microframework, librería o módulo NPM, te debo una cerveza</li>
+						</ol>
+					</section>
+
+					<section>
+						<h2><a href="https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4#.h47ize435">Javascript Fatigue</a></h2>
+						<blockquote style="text-align: left" cite="https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4#.h47ize435">
+							Saul: “How’s it going?” <br>
+							Me: “Fatigued.” <br>
+							Saul: “Family?” <br>
+							Me: “No, Javascript.” <br>
+					</blockquote>
+					</section>
+
+				</section>
+
+				<section>
+					<section data-background="./img/angularhero.jpg">
+					</section>
+					<section>
+            <img src="./img/angular.png" alt="Angular logo" height="200px">
+						<h3>Patrones de diseño</h3>
+						<h3>Escalabilidad</h3>
+						<h3>Testeabilidad</h3>
+						<h3>Performance</h3>
+						<h3>Framework</h3>
+					</section>
+					<section>
+            <img src="./img/angular.png" alt="Angular logo" height="200px">
+						<p>Inicialmente desarrollado por Miško Hevery</p>
+						<p>Mantenido por Google</p>
+						<p>MODEL VIEW <s>CONTROLLER</s></p>
+						<p> <s>PRESENTER</s></p>
+						<p>WHATEVER</p>
+					</section>
+
+					<section>
+            <img src="./img/angular.png" alt="Angular logo" height="200px">
+						<h2>Data-binding</h2>
+						<div ng-app="myApp" ng-controller="myCtrl">
+							<pre><code class="html" data-trim contenteditable>
+&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+    &lt;input ng-model="name"&gt;
+    &lt;p ng-bind="name"&gt;&lt;/p&gt;
+&lt;/div&gt;
+							</code></pre>							
+						    <input style="color:#5E5E5E" ng-model="name">
+						    <h3>{{name}}</h1>
+						</div>
+						
+					</section>
+
+					<section>
+            <img src="./img/angular.png" alt="Angular logo" height="200px">
+						<h2>Templating</h2>
+						<div ng-app="myApp" ng-controller="myCtrl">
+							<pre><code class="javascript" data-trim>
+function AlbumCtrl($scope) {
+	scope.images = [
+		{"thumbnail":"img/image_01.png", "description":"Image 01 description"},
+		{"thumbnail":"img/image_02.png", "description":"Image 02 description"},
+		{"thumbnail":"img/image_03.png", "description":"Image 03 description"}
+	];
+}
+							</code></pre>
+
+							<pre><code class="html" data-trim>
+<div ng-controller="AlbumCtrl">
+  <ul>
+    <li ng-repeat="image in images">
+      <img ng-src="{{image.thumbnail}}" alt="{{image.description}}">
+    </li>
+  </ul>
+</div>
+							</code></pre>
+					</section>
+
+					<section>
+            <img src="./img/angular.png" alt="Angular logo" height="200px">
+						<h2>Dependency Injection</h2>
+							<pre><code class="javascript" data-trim>
+function EditCtrl($scope, $location, $routeParams) {
+   // Something clever here...
+}
+							</code></pre>
+					</section>
+
+					<section>
+            <img src="./img/angular.png" alt="Angular logo" height="200px">
+					<h2>Directivas y componentes</h2>
+						<pre><code class="html" data-trim>
+<my-component ng-model="message"></my-component>						
+						</code></pre>
+					</section>
+
+					<section>
+            <img src="./img/angular.png" alt="Angular logo" height="200px">
+						<h3>Junto a otras herramientas como Polymer o Material</h3>
+						<img src="./img/polymer.png"  height="200">
+						<img src="./img/material.png"  height="200">
+					</section>
+
+					<section>
+            <img src="./img/angular.png" alt="Angular logo" height="200px">
+						<blockquote style="text-align: left" cite="https://docs.angularjs.org/guide/introduction">
+							It is very helpful indeed if the framework guides developers through the entire journey of building an app: from designing the UI, through writing the business logic, to testing.
+
+							<p class="pull-right"><a href="https://docs.angularjs.org/guide/introduction">— The Zen of Angular</a></p>
+						</blockquote>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Real-time applications</h2>
+					</section>
+					<section>
+						<h3>¿Qué son las aplicaciones en tiempo real o reactivas?</h3>
+            <img src="./img/reactive2.gif" height="300px">
+						<img src="./img/reactive.gif" height="300px">
+            <img src="./img/twitter.gif" >
+					</section>
+
+					<section>
+						<h3>Hasta pronto Request-Reply</h3>
+						<h2>¡Hola, Event-Driven!</h2>
+					</section>
+					<section>
+						<div class="row">
+							<div class="col-md-6" style="text-align: left">
+								<h3>Enfoque REST</h3>
+								-> give me the users list <br>
+								<- Luke, Obi, Leia, Darth <br>
+								[stop] <br>
+							</div>
+							<div class="col-md-6" style="text-align: left">
+								<h3>Enfoque PUB/SUB</h3>
+								-> i'm interested to users list <br>
+								<- Luke <br>
+								<- Obi <br>
+								<- Leila <br>
+								<- Darth <br>
+								[... wait for it ...] <br>
+								<- Yoda <br>
+								[... wait for it ...] <br>
+								-> i'm not interested anymore <br>
+								[stop] <br>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h2>Websockets</h2>
+						<ul>
+							<li>Los datos viajan, en ambas direcciones, por el canal web-socket</li>
+							<li>Los mensajes son recibidos por el cliente sin necesidad de refrescar</li>
+							<li>El tráfico consiste en un flujo mayor de paquetes pequeños, en lugar de pocos grandes</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<img src="./img/firebase2.png">
+					</section>
+					<section>
+						<h2>Principales servicios</h2>
+						<img src="./img/firebase-authentication2.jpg">
+					</section>
+					<section>
+						<h2>Principales servicios</h2>
+						<img src="./img/firebase-database.jpg">
+					</section>
+
+					<section>
+            <img src="./img/firebase.png" alt="Firebase logo" height="200px">
+						<h3>Firebase Realtime Database</h3>
+						<ul>
+							<li>Almacenamiento No-SQL</li>
+							<li>Multitud de SDKs</li>
+							<li>Cuando se produce una modificación, se trasmite a todo cliente suscrito a su escucha</li>
+						</ul>
+					</section>
+          <section data-background-image="./img/realtime-data.gif">
+          </section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Crear cuenta en Firebase y una aplicación</h2>
+						<a href="https://console.firebase.google.com/">https://console.firebase.google.com/</a>
+					</section>
+					<section>
+						<h2>Primeros pasos</h2>
+						<pre><code class="javascript" data-trim>
+// Create a Firebase database reference
+var ref = new Firebase("https://jornadas-hacklab.firebaseio.com/");
+
+// Save data
+ref.set("Hola holita, vecinito!");
+
+// Sync data
+ref.on("value", function(snapshot) {
+  console.log(snapshot.val());
+});
+
+// Push data
+ref.push({ name : "WhatEver" }); 
+
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Abrimos al público nuestra base de datos</h2>
+						<pre><code class="javascript" data-trim>					
+{
+  "rules": {
+    ".read":"true",
+    ".write":"true"
+  }
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Manos a la obra</h3>
+						<p>Utilizando Angular, Firebase y Angularfire2</p>
+						<p>montaremos nuestra propia alternativa a <a href="https://trello.com/">Trello</a></p>
+					</section>
+					<section>
+						<img src="./img/yoda.jpg">	
+					</section>
+				</section>
+				<section>
+					<h1>¡muchas gracias!</h1>
+          <img src="./img/almeriajs.jpg"  height="200">
+          <p>¿Preguntas?</p>
+          
+				</section>
+        <section>
+          <h1>Lets 🍻!</h1>
+        </section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+		<script src="app.js"></script>
+	</body>
+</html>
