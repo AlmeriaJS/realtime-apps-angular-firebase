@@ -58,7 +58,7 @@ export const environment = {
     databaseURL: "https://XXXXXXXXXX.firebaseio.com",
     projectId: "XXXXXXXXXX",
     storageBucket: "XXXXXXXXXX.appspot.com",
-    messagingSenderId: "XXXXXXXXXX
+    messagingSenderId: "XXXXXXXXXX"
   }
 };
 ```
