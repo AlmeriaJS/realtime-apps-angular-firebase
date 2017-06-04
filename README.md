@@ -5,9 +5,7 @@ Tienes disponibles las transparencias en **/slides/** y la demo en **/live-demo*
 
 ---
 
-# ¿Cómo probar la demo?
-
-## 1. Instalación y configuración
+## ¿Cómo probar la demo?
 
 ### 0. Prerrequisitos
 Necesitas Angular CLI, typings y TypeScript.
