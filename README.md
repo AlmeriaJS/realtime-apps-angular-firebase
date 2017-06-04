@@ -24,7 +24,15 @@ npm install -g typescript
 cd live-demo
 ```
 
-### 2. Crea tu proyecto en Firebase y consigue los detalles de conexión
+### 2 Instala los paquetes de npm
+En el package.json ya están incluídas las librerias de angularfire2 y firebase, instaladas durante la live demo
+
+```bash
+cd live-demo
+npm install
+```
+
+### 3. Crea tu proyecto en Firebase y consigue los detalles de conexión
 Crea una cuenta en la consola de Firebase https://console.firebase.google.com/ y crea un proyecto.
 
 Una vez lo hayas creado, indica que quieres añadir Firebase a tu aplicación web. Ahí encontrarás los detalles de conexión
@@ -59,14 +67,6 @@ export const environment = {
     messagingSenderId: "XXXXXXXXXX"
   }
 };
-```
-
-### 3 Instala los paquetes de npm
-En el package.json ya están incluídas las librerias de angularfire2 y firebase, instaladas durante la live demo
-
-```bash
-cd live-demo
-npm install
 ```
 
 ### 4 Corre la aplicación con Angular CLI
