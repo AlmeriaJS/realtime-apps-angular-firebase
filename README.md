@@ -69,7 +69,16 @@ export const environment = {
 };
 ```
 
-### 4 Corre la aplicación con Angular CLI
+### 4 Abre las reglas de acceso a tu proyecto Firebase
+Para el ejercicio de la live-demo, hemos definido un acceso libre a nuestra instancia de Firebase Realtime DB (sin autenticación).
+
+Para ello, nos dirigimos a Settings -> Database -> Reglas y sobrescribimos con:
+
+```json
+{"rules":{".read":"true",".write":"true"}}
+```
+
+### 5 Corre la aplicación con el servidor web de desarrollo de Angular CLI
 En el package.json ya están incluídas las librerias de angularfire2 y firebase, instaladas durante la live demo
 
 ```bash
